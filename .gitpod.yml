@@ -1,0 +1,17 @@
+image: gitpod/workspace-full
+
+tasks:
+  - name: Init API
+    init: cd api && npm install
+    command: cd api && node index.js
+  - name: Init Laravel
+    init: cd laravel-app && composer install && cp .env.example .env && php artisan key:generate
+    command: cd laravel-app && php artisan serve --host=0.0.0.0 --port=8000
+
+ports:
+  - port: 8080
+    onOpen: open-preview
+    name: api
+  - port: 8000
+    onOpen: open-preview
+    name: laravel
