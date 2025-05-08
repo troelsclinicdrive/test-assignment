@@ -22,8 +22,7 @@ tasks:
       cd api
       npm install
     command: |
-      cd api
-      node index.js
+      node api/index.js
 
 ports:
   - port: 8000
