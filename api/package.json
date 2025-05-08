@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/caspertorndahl/application-assignment.git"
+    "url": "git+https://github.com/troelsclinicdrive/test-assignment.git"
   },
-  "author": "casper@clinicdrive.dk",
+  "author": "troels@clinicdrive.dk",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/caspertorndahl/application-assignment/issues"
+    "url": "https://github.com/troelsclinicdrive/test-assignment/issues"
   },
-  "homepage": "https://github.com/caspertorndahl/application-assignment#readme",
+  "homepage": "https://github.com/troelsclinicdrive/test-assignment#readme",
   "dependencies": {
     "express": "^4.17.1"
   }
