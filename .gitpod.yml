@@ -7,6 +7,9 @@ tasks:
 
   - name: Init Laravel
     init: |
+      if [ ! -f laravel-app/artisan ]; then
+        composer create-project laravel/laravel laravel-app
+      fi
       cd laravel-app
       composer install
       cp .env.example .env
@@ -14,7 +17,9 @@ tasks:
       php artisan key:generate
       mkdir -p database
       touch database/database.sqlite
-    command: cd laravel-app && php artisan serve --host=0.0.0.0 --port=8000
+    command: |
+      cd laravel-app
+      php artisan serve --host=0.0.0.0 --port=8000
 
 ports:
   - port: 8080
