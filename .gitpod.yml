@@ -4,8 +4,16 @@ tasks:
   - name: Init API
     init: cd api && npm install
     command: cd api && node index.js
+
   - name: Init Laravel
-    init: cd laravel-app && composer install && cp .env.example .env && php artisan key:generate
+    init: |
+      cd laravel-app
+      composer install
+      cp .env.example .env
+      sed -i 's/SESSION_DRIVER=.*/SESSION_DRIVER=file/' .env
+      php artisan key:generate
+      mkdir -p database
+      touch database/database.sqlite
     command: cd laravel-app && php artisan serve --host=0.0.0.0 --port=8000
 
 ports:
